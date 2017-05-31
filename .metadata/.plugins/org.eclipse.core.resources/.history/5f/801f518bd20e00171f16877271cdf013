@@ -1,0 +1,16 @@
+package com.prep;
+
+public class Main {
+
+	final int MAX_CAPACITY=10;
+	int[] heapArray;
+	int heapSize;
+	
+	public Main() {
+		heapArray=new int[MAX_CAPACITY];
+		heapSize=0;
+	}
+	public static void main(String[] args) {
+		
+	}
+}

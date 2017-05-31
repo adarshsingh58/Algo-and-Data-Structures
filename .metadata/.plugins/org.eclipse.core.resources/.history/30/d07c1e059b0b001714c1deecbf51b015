@@ -1,0 +1,83 @@
+package com.prep.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Node {
+
+	public int data;
+	public Node left;
+	public Node right;
+
+	public Node(int data) {
+		this.data = data;
+	}
+
+	public Node search(int i) {
+
+		if (data == i) {
+			return this;
+		} else if (i < data) {
+			if (this.left != null)
+				return this.left.search(i);
+			else
+				return null;
+		} else {
+			if (this.right != null)
+				return this.right.search(i);
+			else
+				return null;
+		}
+	}
+
+	public void add(int i) {
+		if (i == this.data) {
+			return;
+		} else if (i < this.data) {
+			if (this.left != null)
+				this.left.add(i);
+			else
+				this.left = new Node(i);
+
+		} else {
+			if (this.right != null)
+				this.right.add(i);
+			else
+				this.right = new Node(i);
+
+		}
+
+	}
+
+	public void delete(int i) {
+
+		//if data is leaf data
+		if(search(i).left==null && search(i).right==null)
+		{
+			
+		}
+	}
+
+	public void isBST() {
+		List<Integer> list = new ArrayList<Integer>();
+		 list = inorder(this,list);
+		 //if list is in ascending its BST
+		System.out.println(list);
+
+	}
+
+	private List<Integer> inorder(Node node,List<Integer> list ) {
+	
+		if (node.left != null)
+			inorder(node.left,list);
+
+		list.add(node.data);
+
+		if (node.right != null) {
+			inorder(node.right,list);
+
+		}
+		return list;
+	}
+
+}

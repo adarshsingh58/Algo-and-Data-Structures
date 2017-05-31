@@ -1,0 +1,50 @@
+package com.prep.main;
+
+public class BinarySearchTree extends Node{
+
+	public BinarySearchTree(int data) {
+		super(data);
+	}
+
+	public Node search(int i) {
+
+		if (data == i) {
+			return this;
+		} else if (i < data) {
+			if (this.left != null)
+				return this.left.search(i);
+			else
+				return null;
+		} else {
+			if (this.right != null)
+				return this.right.search(i);
+			else
+				return null;
+		}
+	}
+
+	public void add(int i) {
+		if (i == this.data) {
+			return;
+		} else if (i < this.data) {
+			if (this.left != null)
+				this.left.add(i);
+			else
+				this.left = new Node(i);
+
+		} else {
+			if (this.right != null)
+				this.right.add(i);
+			else
+				this.right = new Node(i);
+
+		}
+
+	}
+
+	public void delete(int i)
+	{
+		
+	}
+
+}

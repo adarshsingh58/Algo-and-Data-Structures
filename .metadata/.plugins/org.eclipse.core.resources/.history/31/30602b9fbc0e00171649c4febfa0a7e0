@@ -1,0 +1,15 @@
+package com.gfg.arrayArchives;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class NumberOccuringOdd {
+
+	public static void main(String[] args) {
+		int[] input={2,2,3,3,5,5,3};
+		
+		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+		
+		
+	}
+}

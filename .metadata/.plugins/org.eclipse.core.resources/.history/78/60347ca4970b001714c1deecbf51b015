@@ -1,0 +1,71 @@
+package com.prep.main;
+
+public class Node {
+
+	public int data;
+	public Node left;
+	public Node right;
+
+	public Node(int data) {
+		this.data = data;
+	}
+
+	public Node search(int i) {
+
+		if (data == i) {
+			return this;
+		} else if (i < data) {
+			if (this.left != null)
+				return this.left.search(i);
+			else
+				return null;
+		} else {
+			if (this.right != null)
+				return this.right.search(i);
+			else
+				return null;
+		}
+	}
+
+	public void add(int i) {
+		if (i == this.data) {
+			return;
+		} else if (i < this.data) {
+			if (this.left != null)
+				this.left.add(i);
+			else
+				this.left = new Node(i);
+
+		} else {
+			if (this.right != null)
+				this.right.add(i);
+			else
+				this.right = new Node(i);
+
+		}
+
+	}
+
+	public void delete(int i)
+	{
+		
+	}
+
+	public boolean isBST() {
+	// do an inorder traversal of BST
+		return inorder(this);
+	}
+
+	private int inorder(Node node) {
+		if(node.left!=null)
+		inorder(node.left);
+		
+		int a=/*System.out.println(*/node.data/*)*/;
+		
+		if(node.right!=null)
+		inorder(node.right);
+		
+		
+	}
+
+}
